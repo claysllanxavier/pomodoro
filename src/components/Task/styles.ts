@@ -1,10 +1,13 @@
 import styled from "styled-components/native";
 import { colors, metrics, fonts } from "../../styles";
 
-interface Props {
-  color?: string;
-  borderColor?: string;
-  align?: string;
+interface ColorProps {
+  color: "red" | "black";
+  border: "redBorder" | "black";
+}
+
+interface AlignProps {
+  align: "right" | "left";
 }
 
 export const Wrapper = styled.View`
@@ -21,11 +24,11 @@ export const Container = styled.View`
   align-items: center;
 `;
 
-export const Circle = styled.View`
+export const Priority = styled.View`
   height: 25px;
   width: 25px;
-  background-color: ${(props: Props) => props.color};
-  border: 1px solid ${(props: Props) => props.borderColor};
+  background-color: ${(props: ColorProps) => colors[props.color]};
+  border: 1px solid ${(props: ColorProps) => colors[props.border]};
   border-radius: 50px;
 `;
 
@@ -34,14 +37,16 @@ export const Title = styled.Text`
   font-family: roboto_500;
   color: ${colors.light};
   margin-bottom: ${metrics.baseMargin / 2}px;
-  text-align: ${(props: Props) => (props.align == "right" ? "right" : "left")};
+  text-align: ${(props: AlignProps) =>
+    props.align == "right" ? "right" : "left"};
 `;
 
 export const Text = styled.Text`
   font-size: ${fonts.regular}px;
   font-family: roboto_300;
   color: ${colors.gray};
-  text-align: ${(props: Props) => (props.align == "right" ? "right" : "left")};
+  text-align: ${(props: AlignProps) =>
+    props.align == "right" ? "right" : "left"};
 `;
 
 export const CloseIcon = styled.View`

@@ -3,15 +3,15 @@ import { View } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
 
 import { colors } from "../../styles";
-import { Wrapper, Circle, Container, Title, Text, CloseIcon } from "./styles";
+import { Wrapper, Priority, Container, Title, Text, CloseIcon } from "./styles";
 
 const Task: React.FC = () => {
   return (
     <Wrapper>
       <Container>
-        <Circle color="rgb(105, 64, 70)" borderColor="rgb(222, 85, 106)" />
+        <Priority color="red" border="redBorder" />
         <View style={{ marginLeft: 20 }}>
-          <Title align="left">Mobile app desing</Title>
+          <Title align="left">Mobile app design</Title>
           <Text align="left">30 minutes</Text>
         </View>
       </Container>
