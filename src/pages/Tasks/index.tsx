@@ -1,6 +1,8 @@
 import React from "react";
 import { View, FlatList, TouchableOpacity } from "react-native";
 import { FontAwesome5 } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
+
 import Task from "../../components/Task";
 
 import {
@@ -26,6 +28,8 @@ interface Item {
 }
 
 const Tasks: React.FC = () => {
+  const navigation = useNavigation();
+
   const { data, indexes } = React.useMemo(() => {
     const items: Item[] = [
       {
@@ -129,7 +133,11 @@ const Tasks: React.FC = () => {
   );
 
   const renderButton = () => (
-    <AddButton>
+    <AddButton
+      onPress={() => {
+        navigation.navigate("AddTask");
+      }}
+    >
       <FontAwesome5 name="plus" color="white" size={15} />
       <AddButtonText>Add new task</AddButtonText>
     </AddButton>

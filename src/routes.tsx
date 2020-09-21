@@ -2,14 +2,38 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome5 } from "@expo/vector-icons";
+import { createStackNavigator } from "@react-navigation/stack";
 
 import { colors } from "./styles";
 
 import Time from "./pages/Time";
 import Tasks from "./pages/Tasks";
 import ComingSoon from "./pages/ComingSoon";
+import AddTask from "./pages/AddTask";
 
 const { Navigator, Screen } = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+function TasksScreen() {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Tasks"
+        component={Tasks}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="AddTask"
+        component={AddTask}
+        options={{
+          headerShown: false,
+        }}
+      />
+    </Stack.Navigator>
+  );
+}
 
 const Routes: React.FC = () => (
   <NavigationContainer>
@@ -55,7 +79,7 @@ const Routes: React.FC = () => (
       />
       <Screen
         name="Tasks"
-        component={Tasks}
+        component={TasksScreen}
         options={{
           tabBarLabel: () => null,
           tabBarIcon: ({ size, focused }) => {
