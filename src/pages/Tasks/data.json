@@ -1,0 +1,39 @@
+{
+  "allTasks": [{
+      "border": "redBorder",
+      "color": "red",
+      "title": "Mobile app design",
+      "text": "30 minutes",
+      "count": "1/4",
+      "time": "25 min",
+      "iconType": 2
+    },
+    {
+      "border": "yellowBorder",
+      "color": "yellow",
+      "title": "Ui animation",
+      "text": "0 minutes",
+      "count": "0/2",
+      "time": "25 min",
+      "iconType": 2
+    },
+    {
+      "border": "greenBorder",
+      "color": "green",
+      "title": "Study languages",
+      "text": "0 minutes",
+      "count": "0/1",
+      "time": "25 min",
+      "iconType": 2
+    }
+  ],
+  "completedTasks": [{
+    "border": "greenBorder",
+    "color": "green",
+    "title": "Onboarding",
+    "text": "1 h 30 min",
+    "count": "3/4",
+    "time": "25 min",
+    "iconType": 3
+  }]
+}

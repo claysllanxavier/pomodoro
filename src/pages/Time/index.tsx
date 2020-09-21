@@ -49,7 +49,15 @@ const Time: React.FC = () => {
   return (
     <Wrapper>
       <Container>
-        <Task />
+        <Task
+          border="redBorder"
+          color="red"
+          title="Mobile app design"
+          text="30 minutes"
+          count="1/4"
+          time="25 min"
+          iconType={1}
+        />
       </Container>
 
       <Circle>

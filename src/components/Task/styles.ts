@@ -2,8 +2,8 @@ import styled from "styled-components/native";
 import { colors, metrics, fonts } from "../../styles";
 
 interface ColorProps {
-  color: "red" | "black";
-  border: "redBorder" | "black";
+  color: string;
+  border: string;
 }
 
 interface AlignProps {
@@ -17,6 +17,7 @@ export const Wrapper = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: ${metrics.baseMargin}px;
 `;
 
 export const Container = styled.View`
@@ -27,8 +28,8 @@ export const Container = styled.View`
 export const Priority = styled.View`
   height: 25px;
   width: 25px;
-  background-color: ${(props: ColorProps) => colors[props.color]};
-  border: 1px solid ${(props: ColorProps) => colors[props.border]};
+  background-color: ${(props: ColorProps) => colors[props.color] || "black"};
+  border: 1px solid ${(props: ColorProps) => colors[props.border] || "black"};
   border-radius: 50px;
 `;
 
@@ -49,7 +50,7 @@ export const Text = styled.Text`
     props.align == "right" ? "right" : "left"};
 `;
 
-export const CloseIcon = styled.View`
+export const CloseIcon = styled.TouchableOpacity`
   width: 25px;
   height: 25px;
   border-radius: 50px;

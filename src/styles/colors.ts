@@ -8,6 +8,10 @@ const colors = {
   white: "#fff",
   red: "rgb(105, 64, 70)",
   redBorder: "rgb(222, 85, 106)",
+  yellow: "#695d40",
+  yellowBorder: "#d0ab53",
+  green: "#2c5b44",
+  greenBorder: "#4ca962",
 };
 
 export default colors;
