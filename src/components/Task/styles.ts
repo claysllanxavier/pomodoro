@@ -28,8 +28,8 @@ export const Container = styled.View`
 export const Priority = styled.View`
   height: 25px;
   width: 25px;
-  background-color: ${(props: ColorProps) => colors[props.color] || "black"};
-  border: 1px solid ${(props: ColorProps) => colors[props.border] || "black"};
+  background-color: ${(props: ColorProps) => colors[props.color]};
+  border: 1px solid ${(props: ColorProps) => colors[props.border]};
   border-radius: 50px;
 `;
 
